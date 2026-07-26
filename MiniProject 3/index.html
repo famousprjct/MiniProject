@@ -1,0 +1,105 @@
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #eef7f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    padding: 45px 35px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card h1 {
+    color: #16834e;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #20a464;
+}
+
+button {
+    width: 100%;
+    height: 52px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 10px;
+    background: #20a464;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16834e;
+}
+
+</style>
+
+<div class="home">
+  <div class="card">
+    <h1>Cek Kelayakan Menabung</h1>
+    <p>ready to save at an early age</p>
+    
+    <input type="number" id="umur" placeholder="Min Umur 10Tahun."><br><br>
+    <input type="number" id="uang" placeholder="Min 10K."><br><br>
+    
+    <button onclick="cekLayak()">Cek Kelayakan Nabung</button>
+  </div>
+</div>
+
+<script>
+  function cekLayak(){
+    const umur = Number(document.getElementById("umur").value);
+    const uang = Number(document.getElementById("uang").value);
+    
+    if (umur >= 10 && uang <= 5000){
+      alert("Naikan Nominal Menabung");
+      
+    } else if (umur >= 10 && uang <= 10000){
+      alert("Sudah Bisa Menabung");
+      
+    } else if (umur >= 10 && uang <= 50000){
+      alert("Ideal Untuk Menabung");
+      
+    } else {
+      alert("Usia Kamu Belum Ideal Untuk Menabung")
+      
+    }
+}
+</script>
