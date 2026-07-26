@@ -1,1 +1,114 @@
+<style>
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: gray;
+}
+
+#home {
+    width: 100%;
+    padding: 20px;
+}
+
+#cardNilai {
+    max-width: 450px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+#cardNilai h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 28px;
+}
+
+#cekNilai {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+#cekNilai:focus {
+    border-color: #4f46e5;
+}
+
+#cardNilai button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #4f46e5;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cardNilai button:hover {
+    background: #3730a3;
+}
+#nilai {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#nilai:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+</style>
+<div id="home">
+  <div id="cardNilai">
+    <h1>Kalkulator Nilai</h1>
+    
+    <input type ="number" id="nilai" placeholder="Masukan Nilai"><br><br>
+    
+    <button onclick="cekNilai()">Cek Nilai Kamu</button>
+  </div>
+</div>
+
+<script>
+  function cekNilai(){
+    const nilai = Number(document.getElementById("nilai").value);
+    
+    if (nilai >= 90 && nilai <= 100) {
+        alert("Sangat Baik");
+
+    } else if (nilai >= 80 && nilai <= 89) {
+        alert("Baik");
+
+    } else if (nilai >= 70 && nilai <= 79) {
+        alert("Cukup");
+
+    } else if (nilai >= 60 && nilai <= 69) {
+        alert("Kurang");
+
+    } else {
+        alert("Belajar Lagi");
+    }
+}
+  </script>
