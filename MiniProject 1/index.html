@@ -1,1 +1,97 @@
+<style>
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+}
+
+#home {
+    width: 100%;
+    padding: 20px;
+}
+
+#cardHome {
+    max-width: 450px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+#cardHome h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 28px;
+}
+
+#cekGen {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+#cekGen:focus {
+    border-color: #4f46e5;
+}
+
+#cardHome button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #4f46e5;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cardHome button:hover {
+    background: #3730a3;
+}
+</style>
+
+<div id="home">
+  <div id="cardHome">
+    <h1>Cek Gen Kelahiran Kamu</h1>
+    <input type="number" id="cekGen" placeholder="Masukan Tahun Kelahiran"><br><br>
+    <button onclick="genCek()">Cek Gen Kamu</button>
+  </div>
+</div>
+
+<script>
+function genCek() {
+    const tahun = Number(document.getElementById("cekGen").value);
+
+    if (tahun >= 1965 && tahun <= 1980) {
+        alert("Kamu Adalah Gen X");
+
+    } else if (tahun >= 1981 && tahun <= 1996) {
+        alert("Kamu Adalah Gen Milenial");
+
+    } else if (tahun >= 1997 && tahun <= 2012) {
+        alert("Kamu Adalah Gen Z");
+
+    } else if (tahun >= 2013) {
+        alert("Kamu Adalah Gen Alpha");
+
+    } else {
+        alert("Mohon Maaf Tahun Kelahiran Yang Kamu Masukan Tidak Tersedia Atau Tidak Ada Di Dalam Kategori Sistem Kami, Tunggu Update Aplikasi Ini Nanti.");
+    }
+}
+  </script>
