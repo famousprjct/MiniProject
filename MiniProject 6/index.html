@@ -1,1 +1,105 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    min-height: 100vh;
+    background: #eef7f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    padding: 45px 35px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card h1 {
+    color: #16834e;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #20a464;
+}
+
+button {
+    width: 100%;
+    height: 52px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 10px;
+    background: #20a464;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16834e;
+}
+</style>
+
+<div class="home">
+  <div class="card">
+    
+    <h1>Cek Posisi Kamu</h1>
+    <p>Dev : DkzySqwnzy</p>
+    
+    <input type="text" id="posisi" placeholder="Masukan Posisi"><br><br>
+    <button onclick="cekPosisi()">Cek</button>
+    
+  </div>
+</div>
+
+<script>
+  function cekPosisi(){
+    let posisi = document.getElementById("posisi").value;
+
+    if (posisi === "gk" || posisi === "kiper"){
+        alert("Posisi kamu adalah GoalKeeper");
+
+    } else if (posisi === "cb" || posisi === "bek"){
+        alert("Posisi kamu adalah CenterBack");
+
+    } else if (posisi === "tengah"){
+        alert("Posisi kamu adalah CenterMidfielder");
+
+    } else if (posisi === "penyerang" || posisi === "sayap"){
+        alert("Posisi kamu adalah SecondStriker");
+
+    } else {
+        alert("Posisi kamu belum terdaftar di sistem kami");
+    }
+}
+  </script>
