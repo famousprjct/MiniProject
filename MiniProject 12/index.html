@@ -1,0 +1,119 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #f3f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h1 {
+    color: #222;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #555;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #444;
+}
+
+#hasil {
+    margin-top: 25px;
+    margin-bottom: 0;
+    color: #222;
+    font-size: 17px;
+    font-weight: bold;
+}
+</style>
+
+<div class="home">
+  <div class="card">
+    
+    <h1>Cek Presentasi Kehadiran</h1>
+    <p>Dev : DkzySqwnzy</p>
+    
+    <input type="text" id="nama" placeholder="Masukan Nama"><br><br>
+    <input type="number" id="masuk" placeholder="Masuka Jumlah Hari Masuk"><br><br>
+    <input type="number" id="total" placeholder="Masukan Total Hari Sekolah"><br><br>
+    <button onclick="cekPresentasi()">Cek</button>
+    
+    <p id="hasil"></p>
+    
+  </div>
+</div>
+
+<script>
+  function cekPresentasi(){
+    const nama = document.getElementById("nama").value;
+    const masuk = Number(document.getElementById("masuk").value);
+    const total = Number(document.getElementById("total").value);
+    const hasil = document.getElementById("hasil");
+    
+    const persentase = (masuk / total ) * 100;
+    
+    if (persentase >= 95){
+      hasil.textContent = "Halo ," + nama + " presentasi kehadiran kamu sangat baik";
+      
+    } else if (persentase >= 85){
+      hasil.textContent = "Halo ," + nama + " presentasi kehadiran kamu baik";
+      
+    } else if (persentase >= 75){
+      hasil.textContent = "Halo ," + nama + "  presentasi kehadiran kamu cukup";
+      
+    } else {
+      hasil.textContent = "Halo ," + nama + " presentasi kehadiran kamu kurang";
+    }
+}
+</script>
