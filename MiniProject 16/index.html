@@ -1,0 +1,161 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left, #38bdf8, transparent 35%),
+        radial-gradient(circle at bottom right, #8b5cf6, transparent 35%),
+        #0f172a;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+}
+
+/* Card utama */
+.card {
+    width: 100%;
+    max-width: 460px;
+
+    padding: 45px 35px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Icon */
+.icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+/* Judul */
+.card h1 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Deskripsi */
+.card p {
+    color: #cbd5e1;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Input */
+input {
+    width: 100%;
+    height: 54px;
+
+    padding: 0 18px;
+    margin-bottom: 15px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 14px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #94a3b8;
+}
+
+/* Input saat aktif */
+input:focus {
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 15px rgba(56, 189, 248, 0.35);
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Tombol */
+button {
+    width: 100%;
+    height: 54px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #38bdf8,
+            #6366f1
+       
+</style>
+
+<div class="home">
+  <div class="card">
+    
+    <h1>Cek Nilai Dan Kelulusan</h1>
+    <p>Dev : DkzySqwnzy</p>
+    
+    <input type="text" id="nama" placeholder="Masukan Nama"><br><br>
+    <input type="number" id="nilai" placeholder="Masukan Nilai"><br><br>
+    <button onclick="cekNk()">Cek</button>
+    <p id="hasil"></p>
+    
+  </div>
+</div>
+
+<script>
+  function cekNk(){
+    const nama = document.getElementById("nama").value;
+    const nilai = Number(document.getElementById("nilai").value);
+    const hasil = document.getElementById("hasil");
+    
+    if (nama === "" || nilai < 0 || nilai > 100){
+      hasil.textContent = "Halo Data Kamu Tidak Valid";
+      
+    } else if (nilai >= 90 && nilai <= 100){
+      hasil.textContent = "Halo ," + nama + " nilai kamu sangat baik dan kamu Lulus";
+      
+    } else if (nilai >= 75 && nilai <= 89){
+      hasil.textContent = "Halo ," + nama + " nilai kamu baik dan kamu Lulus";
+      
+    } else if (nilai >= 64 && nilai <= 74){
+      hasil.textContent = "Halo ," + nama + " nilai kamu cukup dan kamu Lulus";
+      
+    } else {
+      hasil.textContent = "Halo ," + nama + " nilai kamu kurang dan kamu Tidak Lulus";
+    }
+}
+</script>
